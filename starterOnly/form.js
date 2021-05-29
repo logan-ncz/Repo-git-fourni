@@ -1,4 +1,5 @@
 // DOM elements
+
 const modalForm = document.querySelector(".bground");
 const modalConfirm = document.querySelector(".confirm-modal");
 const modalConfirmBtn = document.querySelector(".confirm-modal-btn");
@@ -30,6 +31,7 @@ const errorMessages = {
 //
 
 //invalid alert
+
 function isInvalid(element, message) {
 	let target;
 	if (NodeList.prototype.isPrototypeOf(element)) target = element[0].parentNode;
@@ -39,18 +41,24 @@ function isInvalid(element, message) {
 }
 
 //valid alert
+
 function isValid() {
+
+	// close modal confirm
+
+	function closeConfirmModal() {
+		modalConfirm.style.display = "none";
+	}
+
 	modalForm.style.display = "none";
 	modalConfirm.style.display = "flex";
-	modalConfirmBtn.addEventListener("click", () => {
-		modalConfirm.style.display = "none";
-	});
-	modalConfirmClose.addEventListener("click", () => {
-		modalConfirm.style.display = "none";
-	});
+	modalConfirmBtn.addEventListener("click", closeConfirmModal);
+	modalConfirmClose.addEventListener("click", closeConfirmModal);
+	
 }
 
 //delete previous alerts
+
 function removeAlerts() {
 	let invalidFields = document.querySelectorAll(
 		'.formData[data-error-visible="true"]'
@@ -62,6 +70,7 @@ function removeAlerts() {
 }
 
 // check first name
+
 function firstValidation() {
 	let inputValue = firstNameInput.value;
 	if (inputValue !== null && inputValue.length >= 2) return true;
@@ -69,6 +78,7 @@ function firstValidation() {
 }
 
 // check last name
+
 function lastValidation() {
 	let inputValue = lastNameInput.value;
 	if (inputValue !== null && inputValue.length >= 2) return true;
@@ -76,12 +86,14 @@ function lastValidation() {
 }
 
 //check if email use valid formatting
+
 function emailValidation() {
 	let regex = /^\S+@\S+\.\S+$/;
 	return regex.test(emailInput.value);
 }
 
 //check if birthdate is valid and older than today
+
 function birthdateValidation() {
 	let birthdate = new Date(birthdateInput.value);
 	let today = new Date();
@@ -101,12 +113,14 @@ function birthdateValidation() {
 }
 
 // check if quantity is a valid number
+
 function quantityValidation() {
 	let regex = /^[0-9]+$/;
 	return regex.test(quantityInput.value);
 }
 
 // check if user chose a location
+
 function locationValidation() {
 	for (let radio of locationInput) {
 		if (radio.checked === true) return true;
@@ -115,11 +129,13 @@ function locationValidation() {
 }
 
 //check if cgu are checked
+
 function checkboxValidation() {
 	return checkboxInput.checked;
 }
 
 // global form validation
+
 function validate(event) {
 	event.preventDefault();
 	let isValidInput = true;
