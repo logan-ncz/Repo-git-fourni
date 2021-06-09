@@ -13,6 +13,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelectorAll(".form-close")
+const heroSection = document.querySelector(".hero-section")
 
 // launch modal event
 
@@ -22,6 +23,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 function launchModal() {
   modalbg.style.display = "block";
+  heroSection.style.display = "none";
 }
 
 // close modal event
@@ -36,5 +38,6 @@ formData[0].addEventListener('submit', (e) => {
 
 function closeModal() {
   modalbg.style.display = "none";
+  heroSection.style.display = "grid";
 }
 
