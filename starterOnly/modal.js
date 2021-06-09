@@ -14,6 +14,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelectorAll(".form-close")
 const heroSection = document.querySelector(".hero-section")
+const form1 = document.querySelector("form")
 
 // launch modal event
 
@@ -39,5 +40,6 @@ formData[0].addEventListener('submit', (e) => {
 function closeModal() {
   modalbg.style.display = "none";
   heroSection.style.display = "grid";
+  form1.reset();
 }
 
