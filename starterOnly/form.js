@@ -54,7 +54,8 @@ function isValid() {
 	modalConfirm.style.display = "flex";
 	modalConfirmBtn.addEventListener("click", closeConfirmModal);
 	modalConfirmClose.addEventListener("click", closeConfirmModal);
-	
+	heroSection.style.display = "grid";
+	form.reset();
 }
 
 //delete previous alerts
