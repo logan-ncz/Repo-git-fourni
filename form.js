@@ -30,7 +30,7 @@ const errorMessages = {
 // Functions
 //
 
-//invalid alert
+// invalid alert
 
 function isInvalid(element, message) {
 	let target;
@@ -40,7 +40,7 @@ function isInvalid(element, message) {
 	target.setAttribute("data-error", message);
 }
 
-//valid alert
+// valid alert
 
 function isValid() {
 
@@ -51,14 +51,14 @@ function isValid() {
 	}
 
 	modalForm.style.display = "none";
-	modalConfirm.style.display = "flex";
+	modalConfirm.style.display = "block";
 	modalConfirmBtn.addEventListener("click", closeConfirmModal);
 	modalConfirmClose.addEventListener("click", closeConfirmModal);
 	heroSection.style.display = "grid";
 	form.reset();
 }
 
-//delete previous alerts
+// delete previous alerts
 
 function removeAlerts() {
 	let invalidFields = document.querySelectorAll(
@@ -86,14 +86,14 @@ function lastValidation() {
 	else return false;
 }
 
-//check if email use valid formatting
+// check if email use valid formatting
 
 function emailValidation() {
 	let regex = /^\S+@\S+\.\S+$/;
 	return regex.test(emailInput.value);
 }
 
-//check if birthdate is valid and older than today
+// check if birthdate is valid and older than today
 
 function birthdateValidation() {
 	let birthdate = new Date(birthdateInput.value);
@@ -129,7 +129,7 @@ function locationValidation() {
 	return false;
 }
 
-//check if cgu are checked
+// check if cgu are checked
 
 function checkboxValidation() {
 	return checkboxInput.checked;
