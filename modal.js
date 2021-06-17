@@ -26,7 +26,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 function launchModal() {
   modalbg.style.display = "block";
-  heroSection.style.display = "none";
+  heroSection.style.opacity = "0";
 }
 
 // close modal event
@@ -41,7 +41,7 @@ formData[0].addEventListener('submit', (e) => {
 
 function closeModal() {
   modalbg.style.display = "none";
-  heroSection.style.display = "grid";
+  heroSection.style.opacity = "1";
   form1.reset();
 }
 

@@ -54,7 +54,7 @@ function isValid() {
 	modalConfirm.style.display = "block";
 	modalConfirmBtn.addEventListener("click", closeConfirmModal);
 	modalConfirmClose.addEventListener("click", closeConfirmModal);
-	heroSection.style.display = "grid";
+	heroSection.style.opacity = "1";
 	form.reset();
 }
 
